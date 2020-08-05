@@ -31,7 +31,7 @@ app.get('', (req, res) => {
 
 app.get('/contact', (req, res) => {
     res.render('contact', {
-        title: 'O Dworku',
+        title: 'Kontakt',
         name: '@Dworek'
     })
 })
