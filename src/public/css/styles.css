@@ -1,0 +1,25 @@
+body {
+    font-family: 'Didact Gothic', sans-serif !important;
+    background-image: url("../img/bckgr.jpg") !important;
+    background-color: #3c99dc !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: larger !important;
+}
+
+img {
+    width: 100px;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px !important;
+}
+
+div {
+    text-align: center;
+}
+
+.button {
+    font-size: 20px;
+}
