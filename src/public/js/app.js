@@ -20,7 +20,7 @@ const searchFunc = (e) => {
     const email = searchEmail.value
     const arrive = searchArrive.value
 
-    fetch('http://localhost:3000/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive).then((response) => {
+    fetch('http://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 alert(data.error)
