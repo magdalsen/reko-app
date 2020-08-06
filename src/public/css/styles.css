@@ -1,14 +1,10 @@
 body {
     font-family: 'Didact Gothic', sans-serif !important;
     background-image: url("../img/bckgr.jpg") !important;
-    background-color: #3c99dc !important;
+    background-color: #d3ba66 !important;
     background-repeat: no-repeat;
-    background-size: cover;
-    font-size: larger !important;
-}
-
-img {
-    width: 100px;
+    background-size: 100%;
+    font-size: 23px !important;
 }
 
 h2 {
@@ -22,4 +18,18 @@ div {
 
 .button {
     font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+    body {
+      font-size: 23px !important;
+      background-size: 250% auto;
+    }
+}
+  
+@media (max-width: 550px) {
+    body {
+      font-size: 100% !important;
+      background-size: 300% auto;
+    }
 }

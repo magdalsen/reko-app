@@ -8,6 +8,7 @@ const searchAge = document.querySelector('#age')
 const searchTel = document.querySelector('#tel')
 const searchEmail = document.querySelector('#email')
 const searchArrive = document.querySelector('#arrive')
+const searchComments = document.querySelector('#comments')
 
 const searchFunc = (e) => {
     e.preventDefault()
@@ -19,8 +20,9 @@ const searchFunc = (e) => {
     const tel = searchTel.value
     const email = searchEmail.value
     const arrive = searchArrive.value
+    const comments = searchComments.value
 
-    fetch('http://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive).then((response) => {
+    fetch('http://localhost:3000/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 alert(data.error)
@@ -38,6 +40,7 @@ const searchFunc = (e) => {
     searchTel.value = ""
     searchEmail.value = ""
     searchArrive.value = ""
+    searchComments.value = ""
 }
 
 form.addEventListener('submit', searchFunc)

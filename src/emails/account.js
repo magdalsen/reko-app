@@ -5,7 +5,10 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const sendWelcomeEmail = (email, nameFirst, rekoDate) => {
     sgMail.send({
         to: email,
-        from: 'dworek.rekolekcje.dziewczyny@gmail.com',
+        from: {
+            email: 'dworek.rekolekcje.dziewczyny@gmail.com',
+            name: 'Rekolekcje w Dworku'
+        },
         subject: 'Potwierdzenie zapisu na rekolekcje w Dworku',
         html: `<p>Cześć ${nameFirst},</p>
         <p>właśnie zapisałaś się na rekolekcje w Dworku w terminie ${rekoDate}.</p>
@@ -17,7 +20,11 @@ const sendWelcomeEmail = (email, nameFirst, rekoDate) => {
         <p>Bank: Spółdzieczy w Mińsku Mazowieckim, Oddział w Siennicy</p>
         <p>Tytuł wpłaty: za pobyt w Centrum Konferencyjnym i Formacyjnym "Dworek" w dniach ... oraz na cele statutowe</p>
         <p>W razie pytań, odpisz na tego maila lub zadzwoń: 539 818 750 (Magda)</p>
-        <p><b>Do zobaczenia! :)</b></p>`
+        <p><b>Do zobaczenia! :)</b></p>`,
+        bcc: {
+            email: 'dworek.rekolekcje.dziewczyny@gmail.com',
+            name: 'Rekolekcje w Dworku'
+        }
     })
 }
 

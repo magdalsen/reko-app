@@ -40,6 +40,10 @@ const User = mongoose.model('User', {
     arrive: {
         type: String,
         required: true
+    },
+    comments: {
+        type: String,
+        required: false
     }
 })
 
