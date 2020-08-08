@@ -45,6 +45,11 @@ app.get('/payments', (req, res) => {
 })
 
 app.get('/form', (req, res) => {
+    if (!req.query.nameFirst || !req.query.surname || !req.query.rekoDate || !req.query.age || !req.query.tel || !req.query.email) {
+        return res.send({
+            error: 'Wszystkie pola (oprócz "Uwagi") muszą być uzupełnione!'
+        })
+    }
     if (req.query.age <= 13) {
         return res.send({
             error: 'Musisz mieć więcej, niż 13 lat!'
@@ -53,11 +58,6 @@ app.get('/form', (req, res) => {
     if (isNaN(req.query.tel)) {
         return res.send({
             error: 'Numer telefonu musi być liczbą!'
-        })
-    }
-    if (!req.query.nameFirst || !req.query.surname || !req.query.rekoDate || !req.query.age || !req.query.tel || !req.query.email) {
-        return res.send({
-            error: 'Wszystkie pola (oprócz "Uwagi") muszą być uzupełnione!'
         })
     }
     nameFirst = req.query.nameFirst
