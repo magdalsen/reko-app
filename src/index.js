@@ -55,7 +55,7 @@ app.get('/form', (req, res) => {
             error: 'Musisz mieć więcej, niż 13 lat!'
         })
     }
-    if (isNaN(req.query.tel)) {
+    if (isNaN(req.query.tel) || !(req.query.tel).trim()) {
         return res.send({
             error: 'Numer telefonu musi być liczbą!'
         })
