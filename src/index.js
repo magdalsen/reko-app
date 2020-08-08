@@ -38,21 +38,26 @@ app.get('/contact', (req, res) => {
 
 app.get('/payments', (req, res) => {
     res.render('payments', {
-        helpText: 'Numer konta do opłaty za rekolekcje w Dworku.',
+        helpText: 'Numer konta do opłaty za rekolekcje w Dworku:',
         title: 'Konto do wpłat',
         name: '@Dworek'
     })
 })
 
 app.get('/form', (req, res) => {
-    if (!req.query.nameFirst || !req.query.surname || !req.query.rekoDate || !req.query.age || !req.query.tel || !req.query.email) {
-        return res.send({
-            error: 'Wszystkie pola muszą być uzupełnione!'
-        })
-    }
     if (req.query.age <= 13) {
         return res.send({
             error: 'Musisz mieć więcej, niż 13 lat!'
+        })
+    }
+    if (isNaN(req.query.tel)) {
+        return res.send({
+            error: 'Numer telefonu musi być liczbą!'
+        })
+    }
+    if (!req.query.nameFirst || !req.query.surname || !req.query.rekoDate || !req.query.age || !req.query.tel || !req.query.email) {
+        return res.send({
+            error: 'Wszystkie pola (oprócz "Uwagi") muszą być uzupełnione!'
         })
     }
     nameFirst = req.query.nameFirst

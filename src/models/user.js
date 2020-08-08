@@ -1,14 +1,16 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 
-const User = mongoose.model('User', {
+const userSchema = new mongoose.Schema({
     nameFirst: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     surname: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     rekoDate: {
         type: String,
@@ -26,11 +28,15 @@ const User = mongoose.model('User', {
     },
     tel: {
         type: Number,
-        required: false
+        required: true,
+        trim: true
     },
     email: {
         type: String,
+        unique: true,
         required: true,
+        trim: true,
+        lowercase: true,
         validate(value) {
             if (!validator.isEmail(value)) {
                 throw new Error('E-mail niepoprawny. Spróbuj ponownie.')
@@ -39,13 +45,19 @@ const User = mongoose.model('User', {
     },
     arrive: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     comments: {
         type: String,
-        required: false
+        required: false,
+        trim: true
     }
+}, {
+    timestamps: true
 })
+
+const User = mongoose.model('User', userSchema)
 
 module.exports = User
 
