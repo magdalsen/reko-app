@@ -25,7 +25,7 @@ const searchFunc = (e) => {
     const comments = searchComments.value
 
     fetch('https://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'city=' + city + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments).then((response) => {
-        response.json().then((data) => {
+        response.text().then((data) => {
             if (data.error) {
                 alert(data.error)
             } else {
