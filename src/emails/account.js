@@ -26,35 +26,35 @@ const sendWelcomeEmail = (email, nameFirst, rekoDate) => {
         }
         )
 }
-const sendBccEmail = (nameFirst, surname, city, rekoDate, age, tel, email, arrive, comments) => {
-    sgMail.send(
-        {
+// const sendBccEmail = (nameFirst, surname, city, rekoDate, age, tel, email, arrive, comments) => {
+//     sgMail.send(
+//         {
             
-            to: "magdal.sen@gmail.com",
-            from: {
-                email: 'dworek.rekolekcje.dziewczyny@gmail.com',
-                name: 'Rekolekcje w Dworku'
-            },
-            subject: `Zapis od ${nameFirst} ${surname}`,
-            html: `<p>Nowy zapis na rekolekcje:</p>
-            <p>Imię: ${nameFirst}</p>
-            <p>Nazwisko: ${surname}</p>
-            <p>Miasto: ${city}</p>
-            <p>Data rozpoczęcia rekolekcji: ${rekoDate}</p>
-            <p>Wiek: ${age}</p>
-            <p>Telefon: ${tel}</p>
-            <p>E-mail: ${email}</p>
-            <p>Przyjazd: ${arrive}</p>
-            <p>Uwagi: ${comments}</p>`,
-            bcc: {
-                email: "dworek.rekolekcje.dziewczyny@gmail.com"
-            }
+//             to: "magdal.sen@gmail.com",
+//             from: {
+//                 email: 'dworek.rekolekcje.dziewczyny@gmail.com',
+//                 name: 'Rekolekcje w Dworku'
+//             },
+//             subject: `Zapis od ${nameFirst} ${surname}`,
+//             html: `<p>Nowy zapis na rekolekcje:</p>
+//             <p>Imię: ${nameFirst}</p>
+//             <p>Nazwisko: ${surname}</p>
+//             <p>Miasto: ${city}</p>
+//             <p>Data rozpoczęcia rekolekcji: ${rekoDate}</p>
+//             <p>Wiek: ${age}</p>
+//             <p>Telefon: ${tel}</p>
+//             <p>E-mail: ${email}</p>
+//             <p>Przyjazd: ${arrive}</p>
+//             <p>Uwagi: ${comments}</p>`,
+//             bcc: {
+//                 email: "dworek.rekolekcje.dziewczyny@gmail.com"
+//             }
                     
-        }
-    )
-}
+//         }
+//     )
+// }
 
 module.exports = {
     sendWelcomeEmail,
-    sendBccEmail
+    // sendBccEmail
 }

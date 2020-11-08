@@ -4,7 +4,7 @@ const hbs = require('hbs')
 require('./db/mongoose')
 const User = require('./models/user')
 const { sendWelcomeEmail } = require('./emails/account')
-const { sendBccEmail } = require('./emails/account')
+// const { sendBccEmail } = require('./emails/account')
 
 const app = express()
 const port = process.env.PORT
@@ -74,7 +74,7 @@ app.get('/form', (req, res) => {
     user.save().then(() => {
         res.send(user)
         sendWelcomeEmail(user.email, user.nameFirst, user.rekoDate)
-        sendBccEmail(user.nameFirst, user.surname, user.city, user.rekoDate, user.age, user.tel, user.email, user.arrive, user.comments)
+        // sendBccEmail(user.nameFirst, user.surname, user.city, user.rekoDate, user.age, user.tel, user.email, user.arrive, user.comments)
     })
 })
 
