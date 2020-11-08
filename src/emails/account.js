@@ -22,39 +22,16 @@ const sendWelcomeEmail = (email, nameFirst, rekoDate) => {
                     <p>Bank: Spółdzieczy w Mińsku Mazowieckim, Oddział w Siennicy</p>
                     <p>Tytuł wpłaty: za pobyt w Centrum Konferencyjnym i Formacyjnym "Dworek" w dniach ... oraz na cele statutowe</p>
                     <p>W razie pytań, odpisz na tego maila lub zadzwoń: 539 818 750 (Magda)</p>
-                    <p><b>Do zobaczenia! :)</b></p>`  
-        }
+                    <p><b>Do zobaczenia! :)</b></p>`            
+            // bcc: {
+            //             email: 'dworek.rekolekcje.dziewczyny@gmail.com',
+            //             name: 'Rekolekcje w Dworku',
+            //             html: `test ${rekoDate} oraz ${nameFirst}`
+            //     }
+        }   
         )
 }
-// const sendBccEmail = (nameFirst, surname, city, rekoDate, age, tel, email, arrive, comments) => {
-//     sgMail.send(
-//         {
-            
-//             to: "magdal.sen@gmail.com",
-//             from: {
-//                 email: 'dworek.rekolekcje.dziewczyny@gmail.com',
-//                 name: 'Rekolekcje w Dworku'
-//             },
-//             subject: `Zapis od ${nameFirst} ${surname}`,
-//             html: `<p>Nowy zapis na rekolekcje:</p>
-//             <p>Imię: ${nameFirst}</p>
-//             <p>Nazwisko: ${surname}</p>
-//             <p>Miasto: ${city}</p>
-//             <p>Data rozpoczęcia rekolekcji: ${rekoDate}</p>
-//             <p>Wiek: ${age}</p>
-//             <p>Telefon: ${tel}</p>
-//             <p>E-mail: ${email}</p>
-//             <p>Przyjazd: ${arrive}</p>
-//             <p>Uwagi: ${comments}</p>`,
-//             bcc: {
-//                 email: "dworek.rekolekcje.dziewczyny@gmail.com"
-//             }
-                    
-//         }
-//     )
-// }
 
 module.exports = {
     sendWelcomeEmail
-    // sendBccEmail
 }
