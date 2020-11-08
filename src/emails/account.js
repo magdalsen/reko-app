@@ -30,7 +30,7 @@ const sendBccEmail = (nameFirst, surname, city, rekoDate, age, tel, email, arriv
     sgMail.send(
         {
             
-            to: "mzoianesta@gmail.com",
+            to: "magdal.sen@gmail.com",
             from: {
                 email: 'dworek.rekolekcje.dziewczyny@gmail.com',
                 name: 'Rekolekcje w Dworku'
