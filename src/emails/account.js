@@ -55,6 +55,6 @@ const sendWelcomeEmail = (email, nameFirst, rekoDate) => {
 // }
 
 module.exports = {
-    sendWelcomeEmail,
+    sendWelcomeEmail
     // sendBccEmail
 }
