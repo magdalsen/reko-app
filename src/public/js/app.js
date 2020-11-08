@@ -2,6 +2,7 @@ console.log('Client side javascript, hi!:)')
 
 const form = document.querySelector('form')
 const searchFirstName = document.querySelector('#nameFirst')
+const searchCity = document.querySelector('#city')
 const searchSurname = document.querySelector('#surname')
 const searchRekoDate = document.querySelector('#rekoDate')
 const searchAge = document.querySelector('#age')
@@ -15,6 +16,7 @@ const searchFunc = (e) => {
 
     const nameFirst = searchFirstName.value
     const surname = searchSurname.value
+    const city = searchCity.value
     const rekoDate = searchRekoDate.value
     const age = searchAge.value
     const tel = searchTel.value
@@ -22,7 +24,7 @@ const searchFunc = (e) => {
     const arrive = searchArrive.value
     const comments = searchComments.value
 
-    fetch('http://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments).then((response) => {
+    fetch('http://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'city=' + city + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 alert(data.error)
@@ -34,6 +36,7 @@ const searchFunc = (e) => {
     })
     searchFirstName.value = ""
     searchFirstName.value = ""
+    searchCity.value = ""
     searchSurname.value = ""
     searchRekoDate.value = ""
     searchAge.value = ""
