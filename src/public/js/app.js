@@ -21,8 +21,8 @@ const searchFunc = (e) => {
     const email = searchEmail.value
     const arrive = searchArrive.value
     const comments = searchComments.value
-
-    fetch('http://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments).then((response) => {
+    
+    return fetch('http://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 alert(data.error)
