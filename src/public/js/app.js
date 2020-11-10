@@ -22,7 +22,7 @@ const searchFunc = (e) => {
     const arrive = searchArrive.value
     const comments = searchComments.value
     
-    const url = 'http://localhost:3000/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments
+    const url = 'http://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments
 
     return fetch(url, {mode: 'no-cors'}).then((response) => {
         if(!response.ok) {
