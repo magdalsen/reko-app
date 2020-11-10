@@ -24,12 +24,15 @@ const searchFunc = (e) => {
     
     const url = 'http://zapisy-rekolekcje.herokuapp.com/form?nameFirst=' + nameFirst + '&' + 'surname=' + surname + '&' + 'rekoDate=' + rekoDate + '&' + 'age=' + age + '&' + 'tel=' + tel + '&' + 'email=' + email + '&' + 'arrive=' + arrive + '&' + 'comments=' + comments
 
-    return fetch(url, {mode: 'no-cors'}).then((response) => {
-        if(!response.ok) {
-            throw new Error("Błąd: " + response.status)
-        }
-        alert('Dziękujemy za zapisanie się na rekolekcje. Wysłaliśmy do Ciebie mailowe potwierdzenie zapisu.')
-        return response.json()
+    fetch(url).then((response) => {
+        response.json().then((data) => {
+            if (data.error) {
+                alert(data.error)
+            } else {
+                alert('Dziękujemy za zapisanie się na rekolekcje. Wysłaliśmy do Ciebie mailowe potwierdzenie zapisu.')
+                data
+            }
+        })
     })
     searchFirstName.value = ""
     searchFirstName.value = ""
