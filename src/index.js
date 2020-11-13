@@ -45,7 +45,7 @@ app.get('/payments', (req, res) => {
 })
 
 app.get('/form', (req, res) => {
-    if (!req.query.nameFirst || !req.query.surname || !req.query.rekoDate || !req.query.age || !req.query.tel || !req.query.email) {
+    if (!req.query.nameFirst || !req.query.surname || !req.query.rekoDate || !req.query.city || !req.query.age || !req.query.tel || !req.query.email) {
         return res.send({
             error: 'Wszystkie pola (oprócz "Uwagi") muszą być uzupełnione!'
         })
@@ -63,12 +63,13 @@ app.get('/form', (req, res) => {
     nameFirst = req.query.nameFirst
     surname = req.query.surname
     rekoDate = req.query.rekoDate
+    city = req.query.city
     age = req.query.age
     tel = req.query.tel
     email = req.query.email
     arrive = req.query.arrive
     comments = req.query.comments
-    const user = new User({ nameFirst, surname, rekoDate, age, tel, email, arrive, comments })
+    const user = new User({ nameFirst, surname, rekoDate, city, age, tel, email, arrive, comments })
     user.save().then(() => {
         res.send(user)
         sendWelcomeEmail(user.email, user.nameFirst, user.rekoDate)

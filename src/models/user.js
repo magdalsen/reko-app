@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    city: {
+        type: String,
+        required: true,
+        trim: true
+    },
     age: {
         type: Number,
         default: 0,

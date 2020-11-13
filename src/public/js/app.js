@@ -4,6 +4,7 @@ const form = document.querySelector("form");
 const searchFirstName = document.querySelector("#nameFirst");
 const searchSurname = document.querySelector("#surname");
 const searchRekoDate = document.querySelector("#rekoDate");
+const searchCity = document.querySelector("#city");
 const searchAge = document.querySelector("#age");
 const searchTel = document.querySelector("#tel");
 const searchEmail = document.querySelector("#email");
@@ -16,6 +17,7 @@ const searchFunc = (e) => {
   const nameFirst = searchFirstName.value;
   const surname = searchSurname.value;
   const rekoDate = searchRekoDate.value;
+  const city = searchCity.value;
   const age = searchAge.value;
   const tel = searchTel.value;
   const email = searchEmail.value;
@@ -31,6 +33,9 @@ const searchFunc = (e) => {
     "&" +
     "rekoDate=" +
     rekoDate +
+    "&" +
+    "city=" +
+    city +
     "&" +
     "age=" +
     age +
@@ -60,9 +65,9 @@ const searchFunc = (e) => {
     });
   });
   searchFirstName.value = "";
-  searchFirstName.value = "";
   searchSurname.value = "";
   searchRekoDate.value = "";
+  searchCity.value = "";
   searchAge.value = "";
   searchTel.value = "";
   searchEmail.value = "";
