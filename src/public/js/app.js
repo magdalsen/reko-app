@@ -52,7 +52,7 @@ const searchFunc = (e) => {
     "comments=" +
     comments;
 
-  fetch(url).then((response) => {
+  fetch(url, {mode: "no-cors"}).then((response) => {
     response.json().then((data) => {
       if (data.error) {
         alert(data.error);
