@@ -25,7 +25,7 @@ const searchFunc = (e) => {
   const comments = searchComments.value;
 
   const url =
-    "https://zapisy-rekolekcje.herokuapp.com/form?nameFirst=" +
+    "https://localhost:3000/form?nameFirst=" +
     nameFirst +
     "&" +
     "surname=" +

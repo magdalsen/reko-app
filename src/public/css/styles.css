@@ -20,6 +20,11 @@ div {
     font-size: 20px;
 }
 
+.rekoFilInfo {
+    background-color: wheat;
+    border: 5px solid red;
+}
+
 @media (max-width: 1200px) {
     body {
       font-size: 23px !important;
